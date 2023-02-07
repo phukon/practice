@@ -1,3 +1,4 @@
+// functional component
 import {useState} from "react";
 
 function APP(props) {
