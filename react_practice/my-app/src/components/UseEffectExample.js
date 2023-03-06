@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
-export function UseStateExample() { // named export, need to use the same name everywhere nad {} when importing/exporting.
+export function UseEffectExample() { // named export, need to use the same name everywhere nad {} when importing/exporting.
   const [resourceType, setResourceType] = useState('posts');
   const [items, setItems] = useState([]);
 
@@ -8,6 +8,11 @@ export function UseStateExample() { // named export, need to use the same name e
     fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
       .then(response => response.json())
       .then(json => setItems(json))
+      
+    return () => {
+      alert('useEffect() cleanup triggered')
+    } // this is for clean up
+
   }, [resourceType])
 
   // useEffect(() => {s
