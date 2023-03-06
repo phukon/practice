@@ -1,10 +1,18 @@
 import React, {useState, useEffect} from 'react'
 
 export function UseStateExample() { // named export, need to use the same name everywhere nad {} when importing/exporting.
-  const [resourceType, setResourceType] = useState('posts')
-  console.log('render');
+  const [resourceType, setResourceType] = useState('posts');
+  const [items, setItems] = useState([]);
 
-  useEffect(() => {console.log('resource type changed')}, [resourceType])
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
+      .then(response => response.json())
+      .then(json => setItems(json))
+  }, [resourceType])
+
+  // useEffect(() => {s
+  //   console.log('On Mount, since it is an empty array')
+  // }, [])
 
   return (
     <>
@@ -14,6 +22,9 @@ export function UseStateExample() { // named export, need to use the same name e
         <button onClick={() => setResourceType('comments')}>Comments</button>
       </div>
       <h1>{resourceType}</h1>
+      {items.map(item => {
+        return <pre>{JSON.stringify(item)}</pre>
+      })}
     </>
   )
 }
