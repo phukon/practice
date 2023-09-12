@@ -1,3 +1,5 @@
+console.time('towerOfHanoickSort')
+
 function towerOfHanoi(n, a, b, c) {
   if (n > 0) {
     towerOfHanoi(n - 1, a, c, b)
@@ -6,4 +8,6 @@ function towerOfHanoi(n, a, b, c) {
   }
 }
 
-towerOfHanoi(2, 1, 2, 3)
+towerOfHanoi(3, 1, 2, 3)
+
+console.timeEnd('towerOfHanoickSort')
