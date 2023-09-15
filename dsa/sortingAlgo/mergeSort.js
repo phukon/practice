@@ -15,7 +15,9 @@ function merge(leftArr, rightArr) {
       sortedArray.push(rightArr.shift())
     }
   }
+  return [...sortedArray, ...leftArr, ...rightArr]
 }
 
 const arr = [-1, -6, -4, 312, 4, 34]
 sortedArray = mergeSort(arr)
+console.log(sortedArray)
