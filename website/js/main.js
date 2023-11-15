@@ -17,8 +17,8 @@ setTimeout(function() {
 window.addEventListener("keyup", enterKey);
 
 console.log(
-  "%cYou hacked my password!😠",
-  "color: #04ff00; font-weight: bold; font-size: 24px;"
+  "%cFeel free to use the code for this website.",
+  "color: #87CEEB; font-weight: bold; font-size: 24px;"
 );
 console.log("%cPassword: '" + password + "' - I wonder what it does?🤔", "color: grey");
 
@@ -88,9 +88,9 @@ function commander(cmd) {
     case "whoami":
       loopLines(whoami, "color2 margin", 80);
       break;
-    case "video":
-      addLine("Opening YouTube...", "color2", 80);
-      newTab(behance);
+    case "blog":
+      addLine("Opening Medium...", "color2", 80);
+      newTab(medium);
       break;
     case "sudo":
       addLine("Oh no, you're not admin...", "color2", 80);
