@@ -14,6 +14,11 @@ setTimeout(function() {
   textarea.focus();
 }, 100);
 
+setTimeout(function() {
+  loopLines(help, "", 80);
+  textarea.focus();
+}, 3000);
+
 window.addEventListener("keyup", enterKey);
 
 console.log(
@@ -142,9 +147,9 @@ function commander(cmd) {
       addLine("Opening LinkedIn...", "color2", 0);
       newTab(linkedin);
       break;
-    case "instagram":
-      addLine("Opening Instagram...", "color2", 0);
-      newTab(instagram);
+    case "gumroad":
+      addLine("Opening Gumroad...", "color2", 0);
+      newTab(gumroad);
       break;
     case "github":
       addLine("Opening GitHub...", "color2", 0);
