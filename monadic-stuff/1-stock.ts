@@ -1,6 +1,7 @@
 /**
  * This file demonstrates basic arithmetic operations without using monads.
  * We have simple functions for squaring a number and adding one to a number.
+ * 
  * @see [GitHub](https://github.com/phukon/practice/tree/main/monadic-stuff)
  */
 
