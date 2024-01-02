@@ -3,7 +3,7 @@
 * To prevent a deadlock, we make sure to send a closing signal
 * Never send a closing signal from the reciever.
 */
-package main
+package main 
 
 import (
   "fmt"
