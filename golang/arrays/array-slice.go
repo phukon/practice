@@ -1,3 +1,25 @@
+/**
+* ヾ(＠⌒ー⌒＠)ノ
+* Array Slicing and Map Creation
+*
+* This code illustrates the usage of arrays, slices, and maps in Go.
+* 
+* The 'main' function demonstrates the following operations:
+* - Declaring an array 'intArr' of size 4 with int32 elements.
+* - Creating a slice 'mySlice' from an existing array and printing its contents.
+* - Slicing 'mySlice' to create a new slice 'sliced' and displaying its elements.
+* - Creating a slice 'makeSlice' using the 'make' keyword with a defined length and capacity.
+* - Modifying 'sliced' slice and observing changes in the original 'mySlice'.
+* - Creating an empty map 'myMap' with string keys and int values, and displaying it.
+* - Populating 'intArr' elements and showcasing slicing operations on arrays.
+* 
+* The code serves as a basic illustration of array slicing, slice creation, modification,
+* map initialization, and array slicing operations in Go.
+* 
+* @see [GitHub](https://github.com/phukon/practice/blob/main/golang/arrays/array-slice.go)
+*/
+
+
 package array 
 
 import (

@@ -1,3 +1,3 @@
-module github.com/phukon/practice/golang
+module github.com/phukon/practice/tree/main/golang
 
 go 1.21.5
