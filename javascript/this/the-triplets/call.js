@@ -1,6 +1,8 @@
 /**
  * The call method is used to call/borrow(use) a function from someone else.
  * Or should I say invoke a METHOD with an owner object passed as an argument to it.
+ *
+ * @see [GitHub](https://github.com/phukon/practice/tree/main/javascript/this/the-triplets)
  */
 
 let name1 = {

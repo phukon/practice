@@ -1,6 +1,8 @@
 /**
  * In the CALL method we passed the arguments individually, comma separated.
  * However in APPLY method, we pass the arguments as a second argument as an array list.
+ *
+ * @see [GitHub](https://github.com/phukon/practice/tree/main/javascript/this/the-triplets)
  */
 
 let name1 = {
