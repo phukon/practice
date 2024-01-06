@@ -23,7 +23,9 @@ this
 
 when using arrow functions, `this` is not redefined. It binds `this` to an object where the function has been defined rather than where it has been called.
 
----
+Objects don't create a binding with `this`, functions do.
+
+## Arrow functions don't create another `this`, doesn't create it's own execution context. It uses the `this` wherever it was created.
 
 ### Footnotes.:
 
