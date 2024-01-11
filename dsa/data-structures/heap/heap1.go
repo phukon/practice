@@ -106,7 +106,7 @@ func (mh *MaxHeap) maxHeapifyDown(index int) {
 		// when left child is the only child
 		if l == lastIndex {
 			childToCompare = l
-		} else if mh.array[l] > mh.array[r] { // or when left child larger
+		} else if mh.array[l] > mh.array[r] { // or when left child larger (yes it can be larger due to extractions)
 			childToCompare = l
 		} else {
 			// when right child is larger
@@ -126,7 +126,7 @@ func (mh *MaxHeap) maxHeapifyDown(index int) {
 func main() {
 	m := &MaxHeap{}
 	fmt.Println(m)
-	buildHeap := []int{12, 93, 42, 32, 33, 24, 54, 41, 13, 89, 43}
+	buildHeap := []int{90, 8, 9, 7, 5, 4, 35, 89}
 
 	for _, n := range buildHeap {
 		m.Insert(n)
