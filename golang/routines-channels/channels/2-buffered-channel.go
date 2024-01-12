@@ -6,7 +6,7 @@
 * allows sending specified messages without an immediate corresponding receiver.
 * In this code, a channel 'c' with a buffer size of 2 is created.Two messages
 * ("hello" and "world") are sent into the buffer channel without an immediate receiver.
-* 
+*
 * The first message is received and printed from the channel, and the second
 * message is received and printed subsequently.
 *
@@ -16,12 +16,12 @@
 * a channel with a buffer of 2. But if I try
 * send data across the channel one more time,
 * it will block and we'll go into a deadloack.
-* 
+*
 * However, attempting to send another message across the channel without an available receiver will cause a deadlock.
 * This scenario leads to the program getting stuck as there's no space in the buffer to accommodate the additional message.
-* 
+*
 * @see [GitHub](https://github.com/phukon/practice/blob/main/golang/routines-channels/channels/2-buffered-channel.go)
-*/
+ */
 
 package main
 
@@ -37,7 +37,6 @@ func main() {
 	msg := <-c
 	fmt.Println(msg)
 
-	msg := <-c
-	fmt.Println(msg)
-
+	msg1 := <-c
+	fmt.Println(msg1)
 }

@@ -8,13 +8,13 @@
 * This code showcases channel communication in Go using goroutines and closing signals.
 * The 'count' function sends messages to the channel 'c' a specified number of times, with delays.
 * The 'main' function receives and prints these messages using a 'for range' loop.
-* 
+*
 * To avoid deadlock, the 'count' function closes the channel after sending all messages.
 * The 'main' function utilizes a 'for range' loop to receive messages until the channel
 * is closed, elegantly handling the loop termination.
-* 
+*
 * @see [GitHub](https://github.com/phukon/practice/blob/main/golang/routines-channels/channels/1-channel.go)
-*/
+ */
 
 package main
 
@@ -27,11 +27,12 @@ func main() {
 	c := make(chan string)
 	go count("sheep", c)
 
+	// infinite loop
 	// for {
 	//   msg, open := <- c
 	//
 	//   if !open {
-	//     break
+	//     break // this line here breaks out of the loop
 	//   }
 	//
 	//   fmt.Println(msg)
@@ -41,7 +42,6 @@ func main() {
 	for msg := range c {
 		fmt.Println(msg)
 	}
-
 }
 
 func count(thing string, c chan string) {
