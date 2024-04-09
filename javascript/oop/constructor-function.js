@@ -4,7 +4,7 @@
  * They are essentially JavaScript functions that are used as classes
  * to create objects with a similar structure.
  * 
- * In JavaScript, every function (including constructor functions like Student)
+ * In JavaScript, every function (including constructor functions)
  * has a prototype property by default. This prototype property is an object
  * that has a constructor property pointing back to the function itself
  * i.e. the original function or the class that the instance was created from.
