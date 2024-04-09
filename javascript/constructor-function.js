@@ -6,7 +6,8 @@
  * 
  * In JavaScript, every function (including constructor functions like Student)
  * has a prototype property by default. This prototype property is an object
- * that has a constructor property pointing back to the function itself.
+ * that has a constructor property pointing back to the function itself
+ * i.e. the original function or the class that the instance was created from.
  *
  * @see [GitHub](https://github.com/phukon/practice/tree/main/javascript/constructor-function.js)
  */
