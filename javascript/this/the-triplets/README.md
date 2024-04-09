@@ -1,0 +1,1 @@
+In JavaScript, every function (including constructor functions like Student) has a prototype property by default. This prototype property is an object that has a constructor property pointing back to the function itself.
