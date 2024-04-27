@@ -6,9 +6,6 @@ const throttleText = document.getElementById("throttle")
 const updateDebounceText = debounce(() => {
   incrementCount(debounceText)
 })
-const updateThrottleText = throttle(() => {
-  incrementCount(throttleText)
-}, 100)
 
 function debounce(cb, delay = 1000) {
   let timeout
@@ -20,6 +17,10 @@ function debounce(cb, delay = 1000) {
     }, delay)
   }
 }
+
+const updateThrottleText = throttle(() => {
+  incrementCount(throttleText)
+}, 100)
 
 function throttle(cb, delay = 1000) {
   let shouldWait = false

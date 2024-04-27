@@ -12,7 +12,16 @@ function Student(name, age, subject) {
   this.subject = subject; // and now we define the extra state that comes with the student
 }
 
-// Setup the prototype chain
+/**
+ * Seting up the prototype chain
+ * What the heck is happening?
+ * -> By default, when we create a function in JavaScript, it automatically gets a prototype object,
+ * -> and this object has a property called constructor that points back to the function itself.
+ * -> However, when we set Student.prototype to a new object using Object.create(), it creates a
+ * -> new object with a different constructor property (pointing to Person instead of Student).
+ * -> To correct this behavior and ensure that Student.prototype.constructor points to Student,
+ * -> we explicitly set it in this line.
+ */
 Student.prototype = Object.create(Person.prototype)
 Student.prototype.constructor = Student
 
