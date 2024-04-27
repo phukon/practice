@@ -1,8 +1,18 @@
-// Private fields are used to declare instance-specific private properties within a class.
-// Static fields are used to define properties that are shared across all instances of a class.
+/**
+ * Private fields are used to declare instance-specific private properties within a class.
+ * Static fields are used to define properties that are shared across all instances of a class.
+ * Note: 27-04-2024
+ * I noticed that static methods in classes can't be directly used by it's instances.
+ * We have to use the methods in this way --> <instance>.constructor.<method>
+ */
 
 class BankAccount {
+  // static. therefore We have to use the field in this way --> <instance>.constructor.<fieldname>
+  // Note that this will directly manipulate the field of the class, hence the fields in all the intances will change
   static bankName = 'RBI'
+
+
+  static #country = 'India' // this thing is private and static.
   #accountNumber;
   #balance;
 
@@ -45,4 +55,5 @@ account1.checkBalance(); // Output: Account 123456789 balance: 1300
 
 
 let account2 = new BankAccount("6969", 69)
-console.log(BankAccount.bankName) // RBI
+account2.constructor.bankName = 'lolololol' // it's a public static field, the bankname is change for the whole class i.e. all the instances
+console.log(account2.constructor.bankName) // RBI
