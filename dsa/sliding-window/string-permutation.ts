@@ -64,7 +64,7 @@ function checkInclusion(): boolean {
 
   if (zero_count === 0) return true;
 
-  for (let i = 0; i < s2_array.length; i++) {
+  for (let i = s1_array.length; i < s2_array.length; i++) {
     const new_char = s2_array[i];
     const old_char = s2_array[i - s1_array.length];
 

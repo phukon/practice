@@ -1,6 +1,7 @@
 function max_sub_sum() {
-  const input_array: number[] = Array.from({ length: 42 }, (_, i: number) =>
-    Math.ceil(Math.random() * (i + 1)),
+  const input_array: number[] = Array.from(
+    { length: 42 },
+    (_: any, i: number) => Math.ceil(Math.random() * (i + 1)),
   );
 
   let max_sum: number = 0;
