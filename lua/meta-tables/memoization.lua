@@ -13,7 +13,7 @@ function Fibonacci.new(n)
     self.n = n
     self.sequence = {0, 1}  -- Initialize the first two numbers of the sequence
     self:generate()  -- Generate the Fibonacci sequence
-    
+
     -- Store in cache before returning
     Fibonacci[n] = self
     return self
@@ -32,8 +32,8 @@ function Fibonacci:print_sequence()
     end
 end
 
-function fn(n)
-    local start_time = os.clock()  
+local function fn(n)
+    local start_time = os.clock()
     local fib = Fibonacci.new(n)
     -- fib:print_sequence()
     local end_time = os.clock()
