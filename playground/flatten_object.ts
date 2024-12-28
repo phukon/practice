@@ -12,6 +12,29 @@ const nestedObject = {
   },
 };
 
+// function flatten_object(
+//   obj: Record<string, any>,
+//   parentKey: string = "",
+// ): Record<string, any> {
+//   let flatObject: Record<string, any> = Object.create(null);
+//
+//   for (let key in obj) {
+//     let newKey = parentKey ? `${parentKey}++${key}` : key;
+//
+//     if (
+//       typeof obj[key] === "object" &&
+//       obj[key] !== null &&
+//       !Array.isArray(obj[key])
+//     ) {
+//       flatObject = { ...flatObject, ...flatten_object(obj[key], newKey) };
+//     } else {
+//       flatObject[newKey] = obj[key];
+//     }
+//   }
+//
+//   return flatObject;
+// }
+
 function flatten_object(obj: any, parent_key = "") {
   let flat_obj = Object.create(null);
 
