@@ -11,7 +11,7 @@ setmetatable(t1, mt)
 setmetatable(t2, mt)
 
 local t3 = t1 + t2
-print(t3.value)
+print("Value " .. t3.value)
 print("\n")
 
 -- =========================================
