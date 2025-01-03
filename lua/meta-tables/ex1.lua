@@ -21,8 +21,8 @@ local defaults = { x = 0, y = 0 }
 local object = {}
 setmetatable(object, { __index = defaults })
 
-print(object.x)
-print(object.y)
+print("Value of X: " .. object.x)
+print("Value of X: " .. object.y)
 
 object.x = 10
-print(object.x)
+print("Value of X after mutation :" .. object.x)
