@@ -55,6 +55,10 @@ function Graph:print_graph()
   end
 end
 
+function Graph:neighbours(vertex)
+  return self.map[vertex]
+end
+
 
 local gr = Graph:new()
 gr:add_edge("a", "b")
@@ -62,3 +66,47 @@ gr:add_edge("a", "c")
 gr:add_edge("a", "d")
 print(" ----- ")
 gr:print_graph()
+
+local function visit(vertex)
+  print("Visited: ", vertex)
+end
+
+function Dfs_iterative(graph, vertex)
+  local marked ={}
+  local stack = { vertex }
+
+  while #stack > 0 do
+    local current_vertex = table.remove(stack)
+    if not marked[current_vertex] then
+      visit(current_vertex)
+      marked[current_vertex] = true
+
+      for _, n in ipairs(graph:neighbours(current_vertex)) do
+        if not marked[n] then
+          table.insert(stack, n)
+        end
+      end
+    end
+  end
+end
+
+
+Dfs_iterative(gr, "a")
+
+
+
+local seen = {}
+
+function Dfs_recursive(graph, vertex)
+  visit(vertex)
+  seen[vertex] = true
+
+  for _, n in ipairs(graph:neighbours(vertex)) do
+    if not seen[n] then
+      Dfs_recursive(graph, n)
+    end
+  end
+end
+
+print(" ======= Recursive =======")
+Dfs_recursive(gr, "a")
