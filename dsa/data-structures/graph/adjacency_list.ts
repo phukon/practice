@@ -314,6 +314,7 @@ function undirBFSIterative(graph: IUndirGraph, node: string) {
   let seen: Set<string> = new Set();
   let queue: string[] = [];
   queue.push(node);
+  let result: string[][] = [];
 
   while (queue.length > 0) {
     let current_node: string = queue.shift()!;
@@ -329,7 +330,7 @@ function undirBFSIterative(graph: IUndirGraph, node: string) {
 }
 
 function dfsRecursive(gr: IUndirGraph, vertex: string, seen = new Set()) {
-  gr.visitNode(vertex)
+  gr.visitNode(vertex);
   seen.add(vertex);
 
   for (const n of gr.getNeighbours(vertex)!) {

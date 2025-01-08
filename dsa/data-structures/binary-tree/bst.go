@@ -1,5 +1,5 @@
 /**
-* BINARY TREE
+* BINARY SEARCH TREE
 * A tree that has nodes with no more than 2 children.
 * Smaller child is on the left and larger on th right.
  */
