@@ -1,5 +1,8 @@
 # Traversal types
 
+- DFS uses stack
+- BFS uses queue
+
 ## Uses Queue, Breadth-First
 
 ### Level order

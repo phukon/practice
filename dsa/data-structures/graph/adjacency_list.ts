@@ -1,3 +1,5 @@
+// - DFS uses stack
+// - BFS uses queue
 class GraphError extends Error {
   constructor(message: string) {
     super(message);
