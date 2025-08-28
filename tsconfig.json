@@ -1,16 +1,25 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "commonjs",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "baseUrl": "./",
     "paths": {
       "@/*": ["*"]
     },
     "outDir": "./dist",
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "isolatedModules": true,
+
+    // 🚀 Important to prevent globals:
+    "moduleDetection": "force",
+    "noEmitOnError": true,
+    "strictBindCallApply": true
   },
+  "include": ["src"], // explicitly include your source folder
   "exclude": ["node_modules", "../../archive/samples"]
 }
