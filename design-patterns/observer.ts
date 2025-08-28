@@ -5,30 +5,27 @@
 // ConcreteSubject	A specific implementation of the subject.
 // ConcreteObserver	A specific observer that reacts to updates.
 
-
 interface Observer<T> {
   update(data: T): void;
 }
 
-
 interface Subject<T> {
-  attach(observer : Observer<T>): void;
+  attach(observer: Observer<T>): void;
   detach(observer: Observer<T>): void;
   notify(): void;
 }
 
 class WeatherStation<T> implements Subject<T> {
-
   private static instance: WeatherStation<any>;
   private observers: Observer<T>[] = [];
   private data!: T;
 
   private constructor() {
-    console.log("Singleton WeatherStation has been initialized! \n")
+    console.log("Singleton WeatherStation has been initialized! \n");
   }
 
   public static getInstance() {
-    if(!WeatherStation.instance) {
+    if (!WeatherStation.instance) {
       WeatherStation.instance = new WeatherStation();
     }
 
@@ -39,14 +36,13 @@ class WeatherStation<T> implements Subject<T> {
     this.observers.push(observer);
   }
 
-
   public detach(observer: Observer<T>): void {
-    this.observers = this.observers.filter(o => o !== observer);
+    this.observers = this.observers.filter((o) => o !== observer);
   }
 
   public notify(): void {
     for (const obs of this.observers) {
-      obs.update(this.data)
+      obs.update(this.data);
     }
   }
 
@@ -54,22 +50,27 @@ class WeatherStation<T> implements Subject<T> {
     this.data = data;
     this.notify();
   }
-
 }
-
 
 class AndroidApp implements Observer<number> {
   update(data: number): void {
-      console.log("The weather value has been updated! ==> ", data, "\n ~ Android App \n \n");
+    console.log(
+      "The weather value has been updated! ==> ",
+      data,
+      "\n ~ Android App \n \n",
+    );
   }
 }
 
 class DesktopApp implements Observer<number> {
   update(data: number): void {
-      console.log("The weather value has been updated! ==> ", data, "\n ~ Desktop App \n \n");
+    console.log(
+      "The weather value has been updated! ==> ",
+      data,
+      "\n ~ Desktop App \n \n",
+    );
   }
 }
-
 
 const Server1 = WeatherStation.getInstance();
 const Server2 = WeatherStation.getInstance();
