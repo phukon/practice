@@ -41,7 +41,7 @@ for (let i = 0; i <= data.length - sublist_size; i++) {
   averages.push(Math.round(avg));
 }
 console.timeEnd("Inefficient Approach");
-console.log("Unefficient approach \n", averages);
+console.log("Inefficient approach \n", averages);
 
 /*
  * [x] need a window of fixed size
